@@ -105,7 +105,7 @@ class UserLoyaltyController extends Controller
         }
 
         $validator = Validator::make($request->all(), [
-            'point' => 'required|integer|min:1'
+            'points' => 'required|integer|min:1'
         ]);
 
         if ($validator->errors()->count() > 0) {
@@ -113,15 +113,15 @@ class UserLoyaltyController extends Controller
         }
 
         $user_ads_points = $this->get_available_ads_points($request['user_id']);
-        if($request->point < (int)getWebConfig(name: 'ads_point_minimum_point')
-            || $request->point > $user_ads_points)
+        if($request->points < (int)getWebConfig(name: 'ads_point_minimum_point')
+            || $request->points > $user_ads_points)
         {
             return response()->json([
                 'message' => translate('insufficient_point!')
             ],422);
         }
 
-        $wallet_transaction = CustomerManager::create_wallet_transaction($request['user_id'],$request->point,'ads_point','point_to_wallet');
+        $wallet_transaction = CustomerManager::create_wallet_transaction($request['user_id'],$request->points,'ads_point','point_to_wallet');
         CustomerManager::create_ads_point_transaction($request['user_id'], $wallet_transaction->transaction_id, $request->point, 'point_to_wallet');
         
         $this->subtract_from_available_ads_points($request['user_id'], $request->point);
