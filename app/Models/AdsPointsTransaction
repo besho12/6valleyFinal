@@ -29,6 +29,8 @@ class AdsPointsTransaction extends Model
 {
     use HasFactory;
 
+    protected $table = 'ads_points_transactions';
+
     protected $fillable = [
         'user_id',
         'transaction_id',
