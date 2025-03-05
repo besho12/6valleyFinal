@@ -112,23 +112,27 @@ class UserLoyaltyController extends Controller
             return response()->json(['errors' => Helpers::validationErrorProcessor($validator)]);
         }
 
-        $user_ads_points = $this->get_available_ads_points($request['user_id']);
-        if($request->points < (int)getWebConfig(name: 'ads_point_minimum_point')
-            || $request->points > $user_ads_points)
-        {
-            return response()->json([
-                'message' => translate('insufficient_point!')
-            ],422);
-        }
-
-        $wallet_transaction = CustomerManager::create_wallet_transaction($request['user_id'],$request->points,'ads_point','point_to_wallet');
-        CustomerManager::create_ads_point_transaction($request['user_id'], $wallet_transaction->transaction_id, $request->point, 'point_to_wallet');
-        
-        $this->subtract_from_available_ads_points($request['user_id'], $request->point);
-
         return response()->json([
-            'message' => translate('point_to_wallet_transfer_successfully!')
+            'message' => 'grrrrrrrrrrr'
         ],200);
+
+        // $user_ads_points = $this->get_available_ads_points($request['user_id']);
+        // if($request->points < (int)getWebConfig(name: 'ads_point_minimum_point')
+        //     || $request->points > $user_ads_points)
+        // {
+        //     return response()->json([
+        //         'message' => translate('insufficient_point!')
+        //     ],422);
+        // }
+
+        // $wallet_transaction = CustomerManager::create_wallet_transaction($request['user_id'],$request->points,'ads_point','point_to_wallet');
+        // CustomerManager::create_ads_point_transaction($request['user_id'], $wallet_transaction->transaction_id, $request->point, 'point_to_wallet');
+        
+        // $this->subtract_from_available_ads_points($request['user_id'], $request->point);
+
+        // return response()->json([
+        //     'message' => translate('point_to_wallet_transfer_successfully!')
+        // ],200);
     }
 
     function get_available_ads_points($user_id){
