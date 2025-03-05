@@ -393,8 +393,7 @@ Route::group(['namespace' => 'RestAPI\v1', 'prefix' => 'v1', 'middleware' => ['a
 
 
     // Route::post('add-ads-points', 'CustomerController@add_ads_points')->middleware('auth:api');
-    Route::post('add-ads-points', 'CustomerController@add_ads_points');
-    Route::post('get-ads-points', 'CustomerController@get_ads_points');
-    Route::post('ads-exchange-currency', 'UserLoyaltyController@ads_exchange_currency');
+    Route::post('add-ads-points', 'CustomerController@add_ads_points')->middleware('auth:api');
+    Route::post('get-ads-points', 'CustomerController@get_ads_points')->middleware('auth:api');
 
 });
