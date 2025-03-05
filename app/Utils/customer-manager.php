@@ -164,6 +164,7 @@ class CustomerManager
     public static function create_ads_point_transaction($user_id, $referance, $amount, $transaction_type)
     {
 
+        dd('ggggggggggggggg');
         return response()->json([
             'message' => '7711grrrrrrrrrrr'
         ],200);
