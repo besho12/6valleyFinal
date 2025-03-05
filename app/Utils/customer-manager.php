@@ -168,16 +168,6 @@ class CustomerManager
         $debit = 0;
         $user = User::find($user_id);
 
-
-        try {
-            $ads_point_transaction = new AdsPointsTransaction();
-        } catch (\Throwable $ex) {
-            dd($ex->getMessage());
-        }
-
-        dd('hhhhhhhhhh');
-
-        
         $ads_point_transaction = new AdsPointsTransaction();
         $ads_point_transaction->user_id = $user->id;
         $ads_point_transaction->transaction_id = \Str::uuid();
