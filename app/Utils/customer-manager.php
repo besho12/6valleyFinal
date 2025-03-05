@@ -169,6 +169,7 @@ class CustomerManager
         $user = User::find($user_id);
 
         $ads_point_transaction = new AdsPointsTransaction();
+        dd('hhhhhhhhhh');
         $ads_point_transaction->user_id = $user->id;
         $ads_point_transaction->transaction_id = \Str::uuid();
         $ads_point_transaction->reference = $referance;
@@ -187,7 +188,7 @@ class CustomerManager
         $ads_point_transaction->updated_at = now();
         $user->loyalty_point = $current_balance;
 
-        dd('hhhhhhhhhh');
+       
 
         try{
             DB::beginTransaction();
