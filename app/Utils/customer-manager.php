@@ -187,12 +187,14 @@ class CustomerManager
         $ads_point_transaction->updated_at = now();
         $user->loyalty_point = $current_balance;
 
+        dd('hhhhhhhhhh');
+
         try{
             DB::beginTransaction();
             $user->save();
             $ads_point_transaction->save();
             DB::commit();
-            dd('hhhhhhhhhh');
+            
             return true;
         }catch(\Exception $ex)
         {
