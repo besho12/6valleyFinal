@@ -112,12 +112,7 @@ class UserLoyaltyController extends Controller
             return response()->json(['errors' => Helpers::validationErrorProcessor($validator)]);
         }
 
-        
-
         $user_ads_points = $this->get_available_ads_points($request['user_id']);
-
-        
-
         
         if($request->points < (int)getWebConfig(name: 'ads_point_minimum_point')
             || $request->points > $user_ads_points)
