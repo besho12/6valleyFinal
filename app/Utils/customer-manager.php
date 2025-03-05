@@ -172,7 +172,7 @@ class CustomerManager
         try {
             $ads_point_transaction = new AdsPointsTransaction();
         } catch (\Throwable $ex) {
-            dd('UUUUUUU');
+            dd($ex->getMessage());
         }
 
         dd('hhhhhhhhhh');
