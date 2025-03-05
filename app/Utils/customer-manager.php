@@ -75,7 +75,7 @@ class CustomerManager
             else if($transaction_type == 'ads_point')
             {
                 $credit = (($amount / BusinessSetting::where('type','ads_point_exchange_rate')->first()->value)*Convert::default(1));
-                dd('hi', $amount, BusinessSetting::where('type','ads_point_exchange_rate')->first()->value, Convert::default(1), $credit);
+                // dd('hi', $amount, BusinessSetting::where('type','ads_point_exchange_rate')->first()->value, Convert::default(1), $credit);
             }
         }
         else if($transaction_type == 'order_place')
@@ -85,6 +85,9 @@ class CustomerManager
 
         $credit_amount = Convert::usd($credit);
         $debit_amount = Convert::usd($debit);
+
+        dd($credit, $credit_amount);
+
         $wallet_transaction->credit = $credit_amount;
         $wallet_transaction->debit = $debit_amount;
         $wallet_transaction->balance = $current_balance + $credit_amount - $debit_amount;
