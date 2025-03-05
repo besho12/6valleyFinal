@@ -74,8 +74,8 @@ class CustomerManager
             }
             else if($transaction_type == 'ads_point')
             {
-                dd('hi', $amount, BusinessSetting::where('type','ads_point_exchange_rate')->first()->value, Convert::default(1));
                 $credit = (($amount / BusinessSetting::where('type','ads_point_exchange_rate')->first()->value)*Convert::default(1));
+                dd('hi', $amount, BusinessSetting::where('type','ads_point_exchange_rate')->first()->value, Convert::default(1), $credit);
             }
         }
         else if($transaction_type == 'order_place')
