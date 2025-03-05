@@ -324,6 +324,7 @@ Route::group(['namespace' => 'RestAPI\v1', 'prefix' => 'v1', 'middleware' => ['a
         //ads
         Route::group(['prefix' => 'ads'], function () {
             Route::post('ads-exchange-currency', 'UserLoyaltyController@ads_exchange_currency');
+            // ->middleware('auth:api');
         });
     });
 
