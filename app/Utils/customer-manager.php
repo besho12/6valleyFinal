@@ -94,7 +94,6 @@ class CustomerManager
         $wallet_transaction->updated_at = now();
         $user->wallet_balance = $current_balance + $add_fund_to_wallet_bonus + $credit_amount - $debit_amount;
         
-        dd($credit, $credit_amount, $debit, $debit_amount, $wallet_transaction);
         try{
             DB::beginTransaction();
             $user->save();
