@@ -86,15 +86,15 @@ class CustomerManager
         $credit_amount = Convert::usd($credit);
         $debit_amount = Convert::usd($debit);
 
-        dd($credit, $credit_amount);
-
+        
         $wallet_transaction->credit = $credit_amount;
         $wallet_transaction->debit = $debit_amount;
         $wallet_transaction->balance = $current_balance + $credit_amount - $debit_amount;
         $wallet_transaction->created_at = now();
         $wallet_transaction->updated_at = now();
         $user->wallet_balance = $current_balance + $add_fund_to_wallet_bonus + $credit_amount - $debit_amount;
-
+        
+        dd($credit, $credit_amount, $debit, $debit_amount, $wallet_transaction);
         try{
             DB::beginTransaction();
             $user->save();
