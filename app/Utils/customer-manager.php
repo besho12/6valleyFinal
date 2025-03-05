@@ -171,10 +171,10 @@ class CustomerManager
 
         try {
             $ads_point_transaction = new AdsPointsTransaction();
-        } catch(\Exception $ex) {
+        } catch (\Throwable $ex) {
             dd('UUUUUUU');
         }
-        
+
         dd('hhhhhhhhhh');
 
         
