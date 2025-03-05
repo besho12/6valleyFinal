@@ -164,6 +164,11 @@ class CustomerManager
     public static function create_ads_point_transaction($user_id, $referance, $amount, $transaction_type)
     {
 
+        return response()->json([
+            'message' => '7711grrrrrrrrrrr'
+        ],200);
+
+
         $credit = 0;
         $debit = 0;
         $user = User::find($user_id);
