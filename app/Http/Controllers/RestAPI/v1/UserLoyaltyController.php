@@ -125,7 +125,7 @@ class UserLoyaltyController extends Controller
         $wallet_transaction = CustomerManager::create_wallet_transaction($request['user_id'],$request->points,'ads_point','point_to_wallet');
         CustomerManager::create_ads_point_transaction($request['user_id'], $wallet_transaction->transaction_id, $request->points, 'point_to_wallet');
 
-        $this->subtract_from_available_ads_points($request['user_id'], $request->point);
+        $this->subtract_from_available_ads_points($request['user_id'], $request->points);
 
         return response()->json([
             'message' => translate('point_to_wallet_transfer_successfully!')
