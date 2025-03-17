@@ -2,11 +2,8 @@
 
 namespace App\Http\Controllers\Admin\Settings;
 
-use App\Contracts\Repositories\AnalyticScriptRepositoryInterface;
-use App\Contracts\Repositories\DeliveryManRepositoryInterface;
-use App\Contracts\Repositories\SocialMediaRepositoryInterface;
-use App\Contracts\Repositories\VendorRepositoryInterface;
 use Carbon\Carbon;
+use App\Models\SpecialAds;
 use Illuminate\Http\Request;
 use App\Traits\SettingsTrait;
 use App\Traits\FileManagerTrait;
@@ -14,14 +11,18 @@ use Illuminate\Http\JsonResponse;
 use Illuminate\Contracts\View\View;
 use Brian2694\Toastr\Facades\Toastr;
 use Illuminate\Http\RedirectResponse;
+use Illuminate\Support\Facades\Cache;
 use App\Http\Controllers\BaseController;
 use App\Services\BusinessSettingService;
 use App\Http\Requests\Admin\AnalyticsRequest;
 use App\Enums\ViewPaths\Admin\BusinessSettings;
 use App\Http\Requests\Admin\BusinessSettingRequest;
+use App\Contracts\Repositories\VendorRepositoryInterface;
 use App\Contracts\Repositories\CurrencyRepositoryInterface;
+use App\Contracts\Repositories\DeliveryManRepositoryInterface;
+use App\Contracts\Repositories\SocialMediaRepositoryInterface;
+use App\Contracts\Repositories\AnalyticScriptRepositoryInterface;
 use App\Contracts\Repositories\BusinessSettingRepositoryInterface;
-use Illuminate\Support\Facades\Cache;
 
 class BusinessSettingsController extends BaseController
 {
@@ -419,7 +420,12 @@ class BusinessSettingsController extends BaseController
 
     public function updateSpecialadsView(Request $request)
     {
-        dd($request->all());
+        SpecialAds::create([
+            'url'=>$request('url'),
+            'title'=>$request('title'),
+            'description'=>$request('description'),
+            'points'=>$request('points'),
+        ]);
     }
 
 }
