@@ -16,21 +16,19 @@
                 <div class="row">
                     <div class="col-md-12">
                         <label for="name" class="title-color">{{translate('name')}}</label>
-                        <select class="form-control w-100" name="name" id="name" required>
-                            <option value="">{{'---'.translate('select').'---'}}</option>
-                            <option value="instagram">{{translate('instagram')}}</option>
-                            <option value="facebook">{{translate('facebook')}}</option>
-                            <option value="twitter">{{translate('twitter')}}</option>
-                            <option value="linkedin">{{translate('linkedIn')}}</option>
-                            <option value="pinterest">{{translate('pinterest')}}</option>
-                            <option value="google-plus">{{translate('google_plus')}}</option>
-                        </select>
+                        <input type="text" name="video_title" class="form-control" id="video_title"
+                               placeholder="{{translate('enter_video_title')}}" required>
                     </div>
                     <div class="col-md-12 mt-2">
                         <input type="hidden" id="id" name="id">
-                        <label for="link" class="title-color">{{ translate('social_media_link')}}</label>
-                        <input type="url" name="link" class="form-control" id="link"
-                               placeholder="{{translate('enter_Social_Media_Link')}}" required>
+                        <label for="video_link" class="title-color">{{ translate('video_link')}}</label>
+                        <input type="url" name="video_link" class="form-control" id="video_link"
+                               placeholder="{{translate('enter_video_Link')}}" required>
+                    </div>
+                    <div class="col-md-12">
+                        <label for="description" class="title-color">{{translate('description')}}</label>
+                        <textarea type="text" name="video_description" class="form-control" id="video_description"
+                               placeholder="{{translate('enter_video_description')}}" required></textarea>
                     </div>
                     <div class="col-md-12">
                         <input type="hidden" id="id">
