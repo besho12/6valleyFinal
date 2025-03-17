@@ -14,16 +14,21 @@
             @csrf
             <div class="form-group">
                 <div class="row">
-                    <div class="col-md-12">
+                    <div class="col-md-6">
                         <label for="name" class="title-color">{{translate('video_title')}}</label>
                         <input type="text" name="video_title" class="form-control" id="video_title"
                                placeholder="{{translate('enter_video_title')}}" required>
                     </div>
+                    <div class="col-md-6">
+                        <label for="name" class="title-color">{{translate('video_points')}}</label>
+                        <input type="text" name="video_points" class="form-control" id="video_points"
+                               placeholder="{{translate('enter_video_points')}}" required>
+                    </div>
                     <div class="col-md-12 mt-2">
                         <input type="hidden" id="id" name="id">
-                        <label for="video_link" class="title-color">{{ translate('video_link')}}</label>
-                        <input type="url" name="video_link" class="form-control" id="video_link"
-                               placeholder="{{translate('enter_video_Link')}}" required>
+                        <label for="video_url" class="title-color">{{ translate('video_url')}}</label>
+                        <input type="url" name="video_url" class="form-control" id="video_url"
+                               placeholder="{{translate('enter_video_url')}}" required>
                     </div>
                     <div class="col-md-12 mt-2">
                         <label for="description" class="title-color">{{translate('description')}}</label>
