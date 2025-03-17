@@ -63,6 +63,8 @@ class SpecialAds extends Authenticatable
     protected $fillable = [
         'id',
         'points',
+        'title',
+        'description',
         'url',
         'created_at',
     ];
