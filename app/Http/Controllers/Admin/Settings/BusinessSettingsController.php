@@ -419,7 +419,7 @@ class BusinessSettingsController extends BaseController
 
     public function updateSpecialadsView(Request $request)
     {
-        dd('here');
+        dd($request->all());
     }
 
 }
