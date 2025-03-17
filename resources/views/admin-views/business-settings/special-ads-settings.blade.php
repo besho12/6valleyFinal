@@ -15,7 +15,7 @@
             <div class="form-group">
                 <div class="row">
                     <div class="col-md-12">
-                        <label for="name" class="title-color">{{translate('name')}}</label>
+                        <label for="name" class="title-color">{{translate('video_title')}}</label>
                         <input type="text" name="video_title" class="form-control" id="video_title"
                                placeholder="{{translate('enter_video_title')}}" required>
                     </div>
