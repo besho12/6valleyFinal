@@ -25,7 +25,7 @@
                         <input type="url" name="video_link" class="form-control" id="video_link"
                                placeholder="{{translate('enter_video_Link')}}" required>
                     </div>
-                    <div class="col-md-12">
+                    <div class="col-md-12 mt-2">
                         <label for="description" class="title-color">{{translate('description')}}</label>
                         <textarea type="text" name="video_description" class="form-control" id="video_description"
                                placeholder="{{translate('enter_video_description')}}" required></textarea>
