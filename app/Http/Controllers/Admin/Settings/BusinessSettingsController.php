@@ -426,6 +426,8 @@ class BusinessSettingsController extends BaseController
             'description'=>$request['description'],
             'points'=>$request['points'],
         ]);
+        Toastr::success(translate('special_ads_added_successfully'));
+        return back();
     }
 
 }
