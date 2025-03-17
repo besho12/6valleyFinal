@@ -10,7 +10,7 @@
                 {{translate('special_ads_setup')}}
             </h2>
         </div>
-        <form action="{{ route('admin.business-settings.announcement') }}" method="post" enctype="multipart/form-data">
+        <form action="{{ route('admin.business-settings.specialads') }}" method="post" enctype="multipart/form-data">
             @csrf
             <div class="form-group">
                 <div class="row">
