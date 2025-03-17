@@ -421,10 +421,10 @@ class BusinessSettingsController extends BaseController
     public function updateSpecialadsView(Request $request)
     {
         SpecialAds::create([
-            'url'=>$request('url'),
-            'title'=>$request('title'),
-            'description'=>$request('description'),
-            'points'=>$request('points'),
+            'url'=>$request['url'],
+            'title'=>$request['title'],
+            'description'=>$request['description'],
+            'points'=>$request['points'],
         ]);
     }
 
