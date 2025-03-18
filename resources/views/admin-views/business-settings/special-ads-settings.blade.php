@@ -118,6 +118,27 @@
 @push('script_2')
 <script>
     console.log('Second script');
+    $(document).ready(function(){
+        $('.delete-specialads').on('click', function () {
+            let specialadsId = $(this).attr("id");
+            Swal.fire({
+                title: messageAreYouSureDeleteThis,
+                text: messageYouWillNotAbleRevertThis,
+                type: 'warning',
+                showCancelButton: true,
+                confirmButtonColor: '#3085d6',
+                cancelButtonColor: '#d33',
+                confirmButtonText: getYesWord,
+                cancelButtonText: getCancelWord,
+                reverseButtons: true
+            }).then((result) => {
+                if (result.value) {           
+                    $('#specialadsdeleteid').val(specialadsId);
+                    $('.delete-specialads-form-submit').submit();            
+                }
+            })
+        });
+    })
 </script>
 @endpush
 
