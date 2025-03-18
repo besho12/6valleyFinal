@@ -11,6 +11,10 @@
             </h2>
         </div>
 
+        @php
+            $single = [];
+        @endphp
+
         <div class="card mt-3">
             <div class="card-body">
                 <form action="{{ route('admin.business-settings.specialads') }}" method="post" enctype="multipart/form-data">
