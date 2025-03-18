@@ -9,6 +9,7 @@ use App\Utils\Helpers;
 use App\Models\Wishlist;
 use App\Models\AdsPoints;
 use App\Models\GuestUser;
+use App\Models\SpecialAds;
 use App\Models\OrderDetail;
 use App\Traits\CommonTrait;
 use App\Traits\PdfGenerator;
@@ -642,5 +643,11 @@ class CustomerController extends Controller
     {
         $totalPoints = AdsPoints::where('user_id', $request['user_id'])->sum('points');
         return response()->json(['points' => $totalPoints], 200);
+    }
+
+    public function get_special_ads(Request $request)
+    {
+        $specialads = SpecialAds::where('id','>',0)->get();
+        return response()->json(['specialads' => $specialads], 200);
     }
 }
