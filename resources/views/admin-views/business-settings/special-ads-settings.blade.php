@@ -13,7 +13,7 @@
 
         <div class="card mt-3">
             <div class="card-body">
-                <form action="{{ route('admin.business-settings.updateSpecialadsView') }}" method="post" enctype="multipart/form-data">
+                <form action="{{ route('admin.business-settings.specialads') }}" method="post" enctype="multipart/form-data">
                     @csrf
                     <div class="form-group">
                         <div class="row">
