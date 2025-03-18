@@ -42,6 +42,7 @@
             </div>
             <div class="d-flex gap-10 justify-content-end flex-wrap">
                 <button type="submit" id="actionBtn" class="btn btn--primary px-4">{{ translate('save')}}</button>
+                <a href="#" class="btn btn--secondary px-4">{{ translate('view_all')}}</a>
                 <a id="update" class="btn btn--primary px-4 d--none">{{ translate('update')}}</a>
             </div>
         </form>
