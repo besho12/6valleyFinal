@@ -2167,6 +2167,7 @@ $('[pattern="[0-9]*"]').on('keypress', function (event) {
 });
 
 $('.delete-specialads').on('click', function () {
+    
     console.log('BBBBBBBBB');
     let specialadsId = $(this).attr("id");
     Swal.fire({
