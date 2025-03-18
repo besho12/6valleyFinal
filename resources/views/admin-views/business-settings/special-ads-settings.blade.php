@@ -81,7 +81,7 @@
         </div>
         <div class="table-responsive mt-4">
             <div class="d-flex justify-content-lg-end">
-                {!! $orders->links() !!}
+                {{-- {!! $orders->links() !!} --}}
             </div>
         </div>
         @if(count($orders) == 0)
