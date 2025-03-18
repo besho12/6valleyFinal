@@ -116,7 +116,9 @@
 @endsection
 
 
-@push('scripts')
+
+@push('script_2')
+
 <script>
     console.log('This script is added via @push in Blade.');
 
@@ -144,9 +146,6 @@
         });
     })
 </script>
-@endpush
-
-@push('script_2')
     <script src="{{dynamicAsset(path: 'public/assets/back-end/js/admin/business-setting/business-setting.js')}}"></script>
 @endpush
 
