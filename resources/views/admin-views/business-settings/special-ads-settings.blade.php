@@ -20,23 +20,23 @@
                             <div class="col-md-6">
                                 <label for="name" class="title-color">{{translate('video_title')}}</label>
                                 <input type="text" name="title" class="form-control" id="video_title"
-                                    placeholder="{{translate('enter_video_title')}}" required >
+                                    placeholder="{{translate('enter_video_title')}}" required value="{{ $single['title'] ?? '' }}">
                             </div>
                             <div class="col-md-6">
                                 <label for="name" class="title-color">{{translate('video_points')}}</label>
                                 <input type="text" name="points" class="form-control" id="video_points"
-                                    placeholder="{{translate('enter_video_points')}}" required >
+                                    placeholder="{{translate('enter_video_points')}}" required value="{{ $single['points'] ?? '' }}">
                             </div>
                             <div class="col-md-12 mt-2">
                                 <input type="hidden" id="id" name="id">
                                 <label for="video_url" class="title-color">{{ translate('video_url')}}</label>
                                 <input type="url" name="url" class="form-control" id="video_url"
-                                    placeholder="{{translate('enter_video_url')}}" required >
+                                    placeholder="{{translate('enter_video_url')}}" required value="{{ $single['url'] ?? '' }}">
                             </div>
                             <div class="col-md-12 mt-2">
                                 <label for="description" class="title-color">{{translate('description')}}</label>
                                 <textarea type="text" name="description" class="form-control" id="video_description"
-                                    placeholder="{{translate('enter_video_description')}}" required> </textarea>
+                                    placeholder="{{translate('enter_video_description')}}" required> {{ $single['description'] ?? '' }}</textarea>
                             </div>
                             <div class="col-md-12">
                                 <input type="hidden" id="id" value="{{ $single['id'] ?? '' }}">
