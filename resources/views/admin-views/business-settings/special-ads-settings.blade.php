@@ -115,12 +115,11 @@
     </div>
 @endsection
 
-@push('script_2')
-    <script src="{{dynamicAsset(path: 'public/assets/back-end/js/admin/business-setting/business-setting.js')}}"></script>
-@endpush
 
-
+@push('scripts')
 <script>
+    console.log('This script is added via @push in Blade.');
+
     $(document).ready(function(){
         console.log('OOOOOOOOO');
         $('.delete-specialads').on('click', function () {
@@ -145,3 +144,9 @@
         });
     })
 </script>
+@endpush
+
+@push('script_2')
+    <script src="{{dynamicAsset(path: 'public/assets/back-end/js/admin/business-setting/business-setting.js')}}"></script>
+@endpush
+
