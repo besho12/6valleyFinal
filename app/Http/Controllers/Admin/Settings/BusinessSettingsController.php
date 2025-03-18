@@ -432,6 +432,7 @@ class BusinessSettingsController extends BaseController
     {
         // $specialads = getWebConfig(name: 'specialads');
         SpecialAds::where('id', $request->id)->delete();
+        $specialads = SpecialAds::where('id','>',0)->get();
         $single = [];
         return view(BusinessSettings::SPECIAL_ADS_SETTINGS[VIEW], compact('specialads','single'));
     }
