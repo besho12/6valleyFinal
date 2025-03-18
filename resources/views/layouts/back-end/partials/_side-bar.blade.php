@@ -1119,6 +1119,7 @@
                                             Request::is('admin/business-settings/web-config/'.BusinessSettings::APP_SETTINGS[URI]) ||
                                             Request::is('admin/business-settings/special-ads-settings/'.BusinessSettings::APP_SETTINGS[URI]) ||
                                             Request::is('admin/business-settings/invoice-settings/'.InvoiceSettings::VIEW[URI]) ||
+                                            Request::is('admin/business-settings/'.BusinessSettings::SPECIAL_ADS_SETTINGS[URI]) ||
                                             Request::is('admin/business-settings/delivery-restriction'))?'active':''}}">
                                         <a class="nav-link" href="{{route('admin.business-settings.web-config.environment-setup')}}"
                                            title="{{translate('system_Settings')}}">
