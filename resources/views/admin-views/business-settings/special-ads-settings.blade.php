@@ -62,6 +62,7 @@
                                 <th>{{translate('video_points')}}</th>
                                 <th>{{translate('video_url')}}</th>
                                 <th>{{translate('description')}}</th>                  
+                                <th>{{translate('action')}}</th>                  
                             </tr>
                         </thead>
 
@@ -73,6 +74,22 @@
                                 <td>{{ $order['points'] }}</td>
                                 <td>{{ $order['url'] }}</td>
                                 <td>{{ $order['description'] }}</td>
+                                <td>
+                                    <div class="d-flex justify-content-center gap-10">
+                                        <a class="btn btn-outline-info btn-sm square-btn "
+                                           title="{{ translate('edit') }}"
+                                           href="{{ route('admin.category.update',[$category['id']]) }}">
+                                            <i class="tio-edit"></i>
+                                        </a>
+                                        <a class="btn btn-outline-danger btn-sm square-btn delete-category"
+                                           title="{{ translate('delete') }}"
+                                           data-product-count = "{{count($category?->product)}}"
+                                           data-text="{{translate('there_were_').count($category?->product).translate('_products_under_this_category').'.'.translate('please_update_their_category_from_the_below_list_before_deleting_this_one').'.'}}"
+                                           id="{{ $category['id'] }}">
+                                            <i class="tio-delete"></i>
+                                        </a>
+                                    </div>
+                                </td>
                             </tr>
                         @endforeach
                         </tbody>
