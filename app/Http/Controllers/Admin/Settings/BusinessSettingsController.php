@@ -430,12 +430,18 @@ class BusinessSettingsController extends BaseController
 
     public function updateSpecialadsView(Request $request)
     {
-        SpecialAds::create([
+        $data = [
             'url'=>$request['url'],
             'title'=>$request['title'],
             'description'=>$request['description'],
             'points'=>$request['points'],
-        ]);
+        ];
+
+        if($request->id){
+            SpecialAds::where('id', $request->id)->update($data);
+        } else {
+            SpecialAds::create($data);
+        }
         Toastr::success(translate('special_ads_added_successfully'));
         return back();
     }
