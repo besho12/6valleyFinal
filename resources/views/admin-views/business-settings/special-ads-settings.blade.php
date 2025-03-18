@@ -88,12 +88,13 @@
                         {{-- {!! $orders->links() !!} --}}
                     </div>
                 </div>
+                
+                @if(count($orders) == 0)
+                    @include('layouts.back-end._empty-state',['text'=>'no_order_found'],['image'=>'default'])
+                @endif
             </div>
         </div>
 
-        @if(count($orders) == 0)
-            @include('layouts.back-end._empty-state',['text'=>'no_order_found'],['image'=>'default'])
-        @endif
     </div>
 @endsection
 
