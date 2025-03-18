@@ -128,8 +128,8 @@
                 showCancelButton: true,
                 confirmButtonColor: '#3085d6',
                 cancelButtonColor: '#d33',
-                confirmButtonText: getYesWord,
-                cancelButtonText: getCancelWord,
+                confirmButtonText: 'Yes',
+                cancelButtonText: 'Cancel',
                 reverseButtons: true
             }).then((result) => {
                 if (result.value) {           
