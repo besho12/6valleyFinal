@@ -10,7 +10,7 @@
                 {{translate('special_ads_setup')}}
             </h2>
         </div>
-        
+
         <div class="card mt-3">
             <div class="card-body">
                 <form action="{{ route('admin.business-settings.specialads') }}" method="post" enctype="multipart/form-data">
@@ -62,12 +62,10 @@
                     <table class="table table-hover table-borderless table-thead-bordered table-nowrap table-align-middle card-table w-100 text-start">
                         <thead class="thead-light thead-50 text-capitalize">
                             <tr>
-                                <th>{{translate('SL')}}</th>
-                                <th>{{translate('order_ID')}}</th>
-                                <th class="text-capitalize">{{translate('order_date')}}</th>
-                                <th class="text-capitalize">{{translate('customer_info')}}</th>
-                                <th>{{translate('store')}}</th>
-                                <th class="text-capitalize">{{translate('total_amount')}}</th>                        
+                                <th>{{translate('video_title')}}</th>
+                                <th>{{translate('video_points')}}</th>
+                                <th>{{translate('video_url')}}</th>
+                                <th>{{translate('description')}}</th>                  
                             </tr>
                         </thead>
 
@@ -75,8 +73,6 @@
                         @foreach($orders as $key=>$order)
 
                             <tr class="status-{{$order['order_status']}} class-all">
-                                <td></td>
-                                <td></td>
                                 <td></td>
                                 <td></td>
                                 <td></td>
