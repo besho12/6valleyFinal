@@ -52,6 +52,25 @@
             </div>
         </div>
 
+
+        <form action="{{ route('admin.business-settings.deletespecialads') }}" method="post" class="delete-specialads-form-submit">
+            @csrf
+            <input name="id" hidden="" id="specialadsdeleteid">
+            <div class="gap-2 mb-3">
+                <label class="title-color"
+                       for="exampleFormControlSelect1">{{ translate('select_Category') }}
+                    <span class="text-danger">*</span>
+                </label>
+                <select name="category_id" class="form-control js-select2-custom category-option" required>
+                </select>
+            </div>
+            <div class="d-flex justify-content-center gap-3">
+                <button type="submit" class="btn btn--primary min-w-120">{{translate('update')}}</button>
+                <button type="button" class="btn btn-danger-light min-w-120"
+                        data-dismiss="modal">{{ translate('cancel') }}</button>
+            </div>
+        </form>
+
         <div class="card mt-3">
             <div class="card-body">
                 <div class="table-responsive datatable-custom">
@@ -81,7 +100,7 @@
                                            href="{{ route('admin.business-settings.specialads') }}/{{ $order['id'] }}">
                                             <i class="tio-edit"></i>
                                         </a>
-                                        <a class="btn btn-outline-danger btn-sm square-btn delete-category"
+                                        <a class="btn btn-outline-danger btn-sm square-btn delete-specialads"
                                            title="{{ translate('delete') }}"                                           
                                            id="{{ $order['id'] }}">
                                             <i class="tio-delete"></i>
