@@ -119,7 +119,7 @@
 <script>
     console.log('This script is added via @push in Blade.');
 
-    $(document).ready(function(){
+    // $(document).ready(function(){
         // console.log('OOOOOOOOO');
         // $('.delete-specialads').on('click', function () {
         //     console.log('BBBBBBBBB');
@@ -141,7 +141,7 @@
         //         }
         //     })
         // });
-    })
+    // })
 </script>
 @endpush
 
