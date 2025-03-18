@@ -10,80 +10,91 @@
                 {{translate('special_ads_setup')}}
             </h2>
         </div>
-        <form action="{{ route('admin.business-settings.specialads') }}" method="post" enctype="multipart/form-data">
-            @csrf
-            <div class="form-group">
-                <div class="row">
-                    <div class="col-md-6">
-                        <label for="name" class="title-color">{{translate('video_title')}}</label>
-                        <input type="text" name="title" class="form-control" id="video_title"
-                               placeholder="{{translate('enter_video_title')}}" required>
+        
+        <div class="card mt-3">
+            <div class="card-body">
+                <form action="{{ route('admin.business-settings.specialads') }}" method="post" enctype="multipart/form-data">
+                    @csrf
+                    <div class="form-group">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <label for="name" class="title-color">{{translate('video_title')}}</label>
+                                <input type="text" name="title" class="form-control" id="video_title"
+                                    placeholder="{{translate('enter_video_title')}}" required>
+                            </div>
+                            <div class="col-md-6">
+                                <label for="name" class="title-color">{{translate('video_points')}}</label>
+                                <input type="text" name="points" class="form-control" id="video_points"
+                                    placeholder="{{translate('enter_video_points')}}" required>
+                            </div>
+                            <div class="col-md-12 mt-2">
+                                <input type="hidden" id="id" name="id">
+                                <label for="video_url" class="title-color">{{ translate('video_url')}}</label>
+                                <input type="url" name="url" class="form-control" id="video_url"
+                                    placeholder="{{translate('enter_video_url')}}" required>
+                            </div>
+                            <div class="col-md-12 mt-2">
+                                <label for="description" class="title-color">{{translate('description')}}</label>
+                                <textarea type="text" name="description" class="form-control" id="video_description"
+                                    placeholder="{{translate('enter_video_description')}}" required></textarea>
+                            </div>
+                            <div class="col-md-12">
+                                <input type="hidden" id="id">
+                            </div>
+                        </div>
                     </div>
-                    <div class="col-md-6">
-                        <label for="name" class="title-color">{{translate('video_points')}}</label>
-                        <input type="text" name="points" class="form-control" id="video_points"
-                               placeholder="{{translate('enter_video_points')}}" required>
+                    <div class="d-flex gap-10 justify-content-end flex-wrap">
+                        <button type="submit" id="actionBtn" class="btn btn--primary px-4">{{ translate('save')}}</button>
+                        {{-- <a href="{{ route('admin.business-settings.specialads') }}" class="btn btn-outline--primary">{{ translate('view_all')}}</a> --}}
+                        <a id="update" class="btn btn--primary px-4 d--none">{{ translate('update')}}</a>
                     </div>
-                    <div class="col-md-12 mt-2">
-                        <input type="hidden" id="id" name="id">
-                        <label for="video_url" class="title-color">{{ translate('video_url')}}</label>
-                        <input type="url" name="url" class="form-control" id="video_url"
-                               placeholder="{{translate('enter_video_url')}}" required>
-                    </div>
-                    <div class="col-md-12 mt-2">
-                        <label for="description" class="title-color">{{translate('description')}}</label>
-                        <textarea type="text" name="description" class="form-control" id="video_description"
-                               placeholder="{{translate('enter_video_description')}}" required></textarea>
-                    </div>
-                    <div class="col-md-12">
-                        <input type="hidden" id="id">
-                    </div>
-                </div>
+                </form>
             </div>
-            <div class="d-flex gap-10 justify-content-end flex-wrap">
-                <button type="submit" id="actionBtn" class="btn btn--primary px-4">{{ translate('save')}}</button>
-                {{-- <a href="{{ route('admin.business-settings.specialads') }}" class="btn btn-outline--primary">{{ translate('view_all')}}</a> --}}
-                <a id="update" class="btn btn--primary px-4 d--none">{{ translate('update')}}</a>
-            </div>
-        </form>
+        </div>
 
         @php
             $orders = [];
         @endphp
 
-        <div class="table-responsive datatable-custom">
-            <table class="table table-hover table-borderless table-thead-bordered table-nowrap table-align-middle card-table w-100 text-start">
-                <thead class="thead-light thead-50 text-capitalize">
-                    <tr>
-                        <th>{{translate('SL')}}</th>
-                        <th>{{translate('order_ID')}}</th>
-                        <th class="text-capitalize">{{translate('order_date')}}</th>
-                        <th class="text-capitalize">{{translate('customer_info')}}</th>
-                        <th>{{translate('store')}}</th>
-                        <th class="text-capitalize">{{translate('total_amount')}}</th>                        
-                    </tr>
-                </thead>
+        <div class="card mt-3">
+            <div class="card-body">
+                <div class="table-responsive datatable-custom">
+                    <table class="table table-hover table-borderless table-thead-bordered table-nowrap table-align-middle card-table w-100 text-start">
+                        <thead class="thead-light thead-50 text-capitalize">
+                            <tr>
+                                <th>{{translate('SL')}}</th>
+                                <th>{{translate('order_ID')}}</th>
+                                <th class="text-capitalize">{{translate('order_date')}}</th>
+                                <th class="text-capitalize">{{translate('customer_info')}}</th>
+                                <th>{{translate('store')}}</th>
+                                <th class="text-capitalize">{{translate('total_amount')}}</th>                        
+                            </tr>
+                        </thead>
 
-                <tbody>
-                @foreach($orders as $key=>$order)
+                        <tbody>
+                        @foreach($orders as $key=>$order)
 
-                    <tr class="status-{{$order['order_status']}} class-all">
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                    </tr>
-                @endforeach
-                </tbody>
-            </table>
-        </div>
-        <div class="table-responsive mt-4">
-            <div class="d-flex justify-content-lg-end">
-                {{-- {!! $orders->links() !!} --}}
+                            <tr class="status-{{$order['order_status']}} class-all">
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                        @endforeach
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="table-responsive mt-4">
+                    <div class="d-flex justify-content-lg-end">
+                        {{-- {!! $orders->links() !!} --}}
+                    </div>
+                </div>
             </div>
         </div>
+
         @if(count($orders) == 0)
             @include('layouts.back-end._empty-state',['text'=>'no_order_found'],['image'=>'default'])
         @endif
