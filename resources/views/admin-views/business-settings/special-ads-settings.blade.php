@@ -122,8 +122,8 @@
         $('.delete-specialads').on('click', function () {
             let specialadsId = $(this).attr("id");
             Swal.fire({
-                title: messageAreYouSureDeleteThis,
-                text: messageYouWillNotAbleRevertThis,
+                title: 'Are you sure to delete this ?',
+                text: 'You will not be able to revert this',
                 type: 'warning',
                 showCancelButton: true,
                 confirmButtonColor: '#3085d6',
@@ -143,34 +143,6 @@
 @endpush
 
 @push('script_2')
-
-{{-- <script>
-    console.log('This script is added via @push in Blade.');
-
-    $(document).ready(function(){
-        console.log('OOOOOOOOO');
-        $('.delete-specialads').on('click', function () {
-            console.log('BBBBBBBBB');
-            let specialadsId = $(this).attr("id");
-            Swal.fire({
-                title: messageAreYouSureDeleteThis,
-                text: messageYouWillNotAbleRevertThis,
-                type: 'warning',
-                showCancelButton: true,
-                confirmButtonColor: '#3085d6',
-                cancelButtonColor: '#d33',
-                confirmButtonText: getYesWord,
-                cancelButtonText: getCancelWord,
-                reverseButtons: true
-            }).then((result) => {
-                if (result.value) {           
-                    $('#specialadsdeleteid').val(specialadsId);
-                    $('.delete-specialads-form-submit').submit();            
-                }
-            })
-        });
-    })
-</script> --}}
     <script src="{{dynamicAsset(path: 'public/assets/back-end/js/admin/business-setting/business-setting.js')}}"></script>
 @endpush
 
