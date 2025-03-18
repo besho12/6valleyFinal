@@ -52,7 +52,7 @@
                     </div>
                     <div class="d-flex gap-10 justify-content-end flex-wrap">
                         <button type="submit" id="actionBtn" class="btn btn--primary px-4">{{ translate('save')}}</button>
-                        <a href="{{ route('admin.business-settings.specialads') }}" class="btn btn-outline--primary">{{ translate('add_new')}}</a>
+                        <a href="{{ route('admin.business-settings.specialads') }}" class="btn btn-outline--primary">{{ translate('refresh')}}</a>
                         <a id="update" class="btn btn--primary px-4 d--none">{{ translate('update')}}</a>
                     </div>
                 </form>
