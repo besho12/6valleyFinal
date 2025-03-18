@@ -69,10 +69,10 @@
                         @foreach($specialads as $key=>$order)
 
                             <tr class="status-{{$order['order_status']}} class-all">
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
+                                <td>{{ $order['title'] }}</td>
+                                <td>{{ $order['points'] }}</td>
+                                <td>{{ $order['url'] }}</td>
+                                <td>{{ $order['description'] }}</td>
                             </tr>
                         @endforeach
                         </tbody>
