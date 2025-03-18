@@ -69,27 +69,6 @@ $('.delete-brand').on('click', function () {
     })
 });
 
-$('.delete-specialads').on('click', function () {
-    console.log('BBBBBBBBB');
-    let specialadsId = $(this).attr("id");
-    Swal.fire({
-        title: messageAreYouSureDeleteThis,
-        text: messageYouWillNotAbleRevertThis,
-        type: 'warning',
-        showCancelButton: true,
-        confirmButtonColor: '#3085d6',
-        cancelButtonColor: '#d33',
-        confirmButtonText: getYesWord,
-        cancelButtonText: getCancelWord,
-        reverseButtons: true
-    }).then((result) => {
-        if (result.value) {           
-            $('#specialadsdeleteid').val(specialadsId);
-            $('.delete-specialads-form-submit').submit();            
-        }
-    })
-});
-
 $('.delete-category').on('click', function () {
     console.log('geeeeeeee');
     let categoryId = $(this).attr("id");

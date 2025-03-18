@@ -6,6 +6,27 @@ $("#update-button-message").click(function () {
     $("#update-error-message").slideDown();
 });
 
+$('.delete-specialads').on('click', function () {
+    console.log('BBBBBBBBB');
+    let specialadsId = $(this).attr("id");
+    Swal.fire({
+        title: messageAreYouSureDeleteThis,
+        text: messageYouWillNotAbleRevertThis,
+        type: 'warning',
+        showCancelButton: true,
+        confirmButtonColor: '#3085d6',
+        cancelButtonColor: '#d33',
+        confirmButtonText: getYesWord,
+        cancelButtonText: getCancelWord,
+        reverseButtons: true
+    }).then((result) => {
+        if (result.value) {           
+            $('#specialadsdeleteid').val(specialadsId);
+            $('.delete-specialads-form-submit').submit();            
+        }
+    })
+});
+
 $('#free-delivery-responsibility').on('change', function () {
     let getAmountAdminArea = $('#free-delivery-over-amount-admin-area');
     if ($(this).val() === 'admin') {
