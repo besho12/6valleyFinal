@@ -115,7 +115,11 @@
     </div>
 @endsection
 
-
+@push('scripts')
+<script>
+    console.log('Second script');
+</script>
+@endpush
 
 @push('script_2')
 
