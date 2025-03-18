@@ -119,7 +119,7 @@
 
 @push('script_2')
 
-<script>
+{{-- <script>
     console.log('This script is added via @push in Blade.');
 
     $(document).ready(function(){
@@ -145,7 +145,7 @@
             })
         });
     })
-</script>
+</script> --}}
     <script src="{{dynamicAsset(path: 'public/assets/back-end/js/admin/business-setting/business-setting.js')}}"></script>
 @endpush
 
