@@ -115,7 +115,7 @@
     </div>
 @endsection
 
-@push('scripts')
+@push('script_2')
 <script>
     console.log('Second script');
 </script>
