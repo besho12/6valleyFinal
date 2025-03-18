@@ -1123,9 +1123,8 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.', 'middleware' => ['admin']],
             Route::post(BusinessSettings::ANNOUNCEMENT[URI], 'updateAnnouncement');
             
             Route::get(BusinessSettings::SPECIAL_ADS_SETTINGS[URI], 'getSpecialadsView')->name('specialads');
-            Route::post(BusinessSettings::SPECIAL_ADS_SETTINGS[URI], 'updateSpecialadsView')->name('specialads');
             Route::get(BusinessSettings::SPECIAL_ADS_SETTINGS[URI].'/{id}', 'editSpecialadsView')->name('editspecialads');
-            // Route::patch(BusinessSettings::SPECIAL_ADS_SETTINGS[URI], 'updateSpecialadsView')->name('updatespecialads');
+            Route::post('add_update', 'updateSpecialadsView')->name('updatespecialads');
             Route::post(BusinessSettings::SPECIAL_ADS_SETTINGS[URI], 'deleteSpecialads')->name('deletespecialads');
         });
     });
