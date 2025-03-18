@@ -39,7 +39,7 @@
                                     placeholder="{{translate('enter_video_description')}}" required> {{ $single['description'] ?? '' }}</textarea>
                             </div>
                             <div class="col-md-12">
-                                <input type="hidden" id="id" value="{{ $single['id'] ?? '' }}">
+                                <input type="hidden" id="id" name="id" value="{{ $single['id'] ?? '' }}">
                             </div>
                         </div>
                     </div>
