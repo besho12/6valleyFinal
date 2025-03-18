@@ -62,7 +62,7 @@
                                 <th>{{translate('video_points')}}</th>
                                 <th>{{translate('video_url')}}</th>
                                 <th>{{translate('description')}}</th>                  
-                                <th>{{translate('action')}}</th>                  
+                                <th class="text-center">{{translate('action')}}</th>                  
                             </tr>
                         </thead>
 
