@@ -53,7 +53,7 @@
         </div>
 
         @php
-            $orders = [];
+            $specialads = [];
         @endphp
 
         <div class="card mt-3">
@@ -70,7 +70,7 @@
                         </thead>
 
                         <tbody>
-                        @foreach($orders as $key=>$order)
+                        @foreach($specialads as $key=>$order)
 
                             <tr class="status-{{$order['order_status']}} class-all">
                                 <td></td>
@@ -85,11 +85,11 @@
 
                 <div class="table-responsive mt-4">
                     <div class="d-flex justify-content-lg-end">
-                        {{-- {!! $orders->links() !!} --}}
+                        {{-- {!! $specialads->links() !!} --}}
                     </div>
                 </div>
                 
-                @if(count($orders) == 0)
+                @if(count($specialads) == 0)
                     @include('layouts.back-end._empty-state',['text'=>'no_order_found'],['image'=>'default'])
                 @endif
             </div>
