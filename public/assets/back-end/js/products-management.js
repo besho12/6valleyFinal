@@ -70,6 +70,7 @@ $('.delete-brand').on('click', function () {
 });
 
 $('.delete-specialads').on('click', function () {
+    console.log('BBBBBBBBB');
     let specialadsId = $(this).attr("id");
     Swal.fire({
         title: messageAreYouSureDeleteThis,
