@@ -78,7 +78,7 @@
                                     <div class="d-flex justify-content-center gap-10">
                                         <a class="btn btn-outline-info btn-sm square-btn "
                                            title="{{ translate('edit') }}"
-                                           href="{{ route('admin.category.update',[$order['id']]) }}">
+                                           href="{{ route('admin.business-settings.specialads',[$order['id']]) }}">
                                             <i class="tio-edit"></i>
                                         </a>
                                         <a class="btn btn-outline-danger btn-sm square-btn delete-category"
