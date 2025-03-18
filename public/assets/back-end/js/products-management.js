@@ -90,6 +90,7 @@ $('.delete-specialads').on('click', function () {
 });
 
 $('.delete-category').on('click', function () {
+    console.log('geeeeeeee');
     let categoryId = $(this).attr("id");
     Swal.fire({
         title: messageAreYouSureDeleteThis,
