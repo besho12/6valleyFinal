@@ -415,18 +415,43 @@ class BusinessSettingsController extends BaseController
     public function getSpecialadsView(): View
     {
         // $specialads = getWebConfig(name: 'specialads');
-        return view(BusinessSettings::SPECIAL_ADS_SETTINGS[VIEW]);
+        $specialads = SpecialAds::where('id','>',0)->get();
+        $single = [];
+        return view(BusinessSettings::SPECIAL_ADS_SETTINGS[VIEW], compact('specialads','single'));
+    }
+    
+    public function editSpecialadsView(Request $request): View
+    {
+        // $specialads = getWebConfig(name: 'specialads');
+        $specialads = SpecialAds::where('id','>',0)->get();
+        $single = SpecialAds::where('id',$request->id)->first();
+        return view(BusinessSettings::SPECIAL_ADS_SETTINGS[VIEW], compact('specialads','single'));
+    }
+    
+    public function deletespecialads(Request $request): View
+    {
+        // $specialads = getWebConfig(name: 'specialads');
+        SpecialAds::where('id', $request->id)->delete();
+        $specialads = SpecialAds::where('id','>',0)->get();
+        $single = [];
+        return view(BusinessSettings::SPECIAL_ADS_SETTINGS[VIEW], compact('specialads','single'));
     }
 
     public function updateSpecialadsView(Request $request)
     {
-        SpecialAds::create([
+        $data = [
             'url'=>$request['url'],
             'title'=>$request['title'],
             'description'=>$request['description'],
-            'points'=>$request['points'],
             'required_view_percentage'=>$request['required_view_percentage'],
-        ]);
+            'points'=>$request['points'],
+        ];
+
+        if($request->id){
+            SpecialAds::where('id', $request->id)->update($data);
+        } else {
+            SpecialAds::create($data);
+        }
         Toastr::success(translate('special_ads_added_successfully'));
         return back();
     }

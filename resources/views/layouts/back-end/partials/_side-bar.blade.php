@@ -990,7 +990,7 @@
                                 Request::is('admin/business-settings/shipping-method/'.ShippingMethod::INDEX[URI]) ||
                                 Request::is('admin/business-settings/delivery-restriction') ||
                                 Request::is('admin/business-settings/invoice-settings') ||
-                                Request::is('admin/business-settings/'.BusinessSettings::SPECIAL_ADS_SETTINGS[URI]) ||
+                                Request::is('admin/business-settings/specialads') ||
                                 Request::is('admin/seo-settings/'.SEOSettings::WEB_MASTER_TOOL[URI]) ||
                                 Request::is('admin/seo-settings/'.SEOSettings::ROBOT_TXT[URI]) ||
                                 Request::is('admin/seo-settings/'.SiteMap::SITEMAP[URI]) ||
@@ -1025,7 +1025,7 @@
                                         Request::is('admin/business-settings/order-settings/index') ||
                                         Request::is('admin/'.BusinessSettings::PRODUCT_SETTINGS[URI]) ||
                                         Request::is('admin/business-settings/invoice-settings') ||
-                                        Request::is('admin/'.BusinessSettings::SPECIAL_ADS_SETTINGS[URI]) ||
+                                        Request::is('admin/business-settings/specialads') ||
                                         Request::is('admin/business-settings/priority-setup')||
                                         Request::is('admin/seo-settings/'.SEOSettings::WEB_MASTER_TOOL[URI]) ||
                                         Request::is('admin/seo-settings/'.SEOSettings::ROBOT_TXT[URI]) ||
@@ -1045,7 +1045,7 @@
                                             Request::is('admin/business-settings/order-settings/index') ||
                                             Request::is('admin/'.BusinessSettings::PRODUCT_SETTINGS[URI]) ||
                                             Request::is('admin/business-settings/invoice-settings') ||
-                                            Request::is('admin/'.BusinessSettings::SPECIAL_ADS_SETTINGS[URI]) ||
+                                            Request::is('admin/business-settings/specialads') ||
                                             Request::is('admin/business-settings/priority-setup') ||
                                             Request::is('admin/business-settings/delivery-restriction'))?'active':''}}">
                                         <a class="nav-link" href="{{route('admin.business-settings.web-config.index')}}"
@@ -1119,6 +1119,7 @@
                                             Request::is('admin/business-settings/web-config/'.BusinessSettings::APP_SETTINGS[URI]) ||
                                             Request::is('admin/business-settings/special-ads-settings/'.BusinessSettings::APP_SETTINGS[URI]) ||
                                             Request::is('admin/business-settings/invoice-settings/'.InvoiceSettings::VIEW[URI]) ||
+                                            Request::is('admin/business-settings/specialads') ||
                                             Request::is('admin/business-settings/delivery-restriction'))?'active':''}}">
                                         <a class="nav-link" href="{{route('admin.business-settings.web-config.environment-setup')}}"
                                            title="{{translate('system_Settings')}}">
