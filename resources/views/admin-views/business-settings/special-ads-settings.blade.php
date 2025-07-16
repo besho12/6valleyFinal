@@ -40,7 +40,7 @@
                                 <input type="url" name="url" class="form-control" id="video_url"
                                     placeholder="{{translate('enter_video_url')}}" required value="{{ $single['url'] ?? '' }}">
                             </div>
-                            <div class="col-md-6">
+                            <div class="col-md-6 mt-2">
                                 <label for="required_view_percentage" class="title-color">{{translate('required_view_percentage')}}</label>
                                 <input type="text" name="required_view_percentage" class="form-control" id="required_view_percentage"
                                     placeholder="{{translate('required_view_percentage')}}" required>
