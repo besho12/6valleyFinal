@@ -43,7 +43,7 @@
                             <div class="col-md-6 mt-2">
                                 <label for="required_view_percentage" class="title-color">{{translate('required_view_percentage')}}</label>
                                 <input type="text" name="required_view_percentage" class="form-control" id="required_view_percentage"
-                                    placeholder="{{translate('required_view_percentage')}}" required>
+                                    placeholder="{{translate('required_view_percentage')}}" required value="{{ $single['required_view_percentage'] ?? '' }}">
                             </div>
                             <div class="col-md-12 mt-2">
                                 <label for="description" class="title-color">{{translate('description')}}</label>
