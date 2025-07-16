@@ -65,6 +65,7 @@ class SpecialAds extends Authenticatable
         'points',
         'title',
         'description',
+        'required_view_percentage',
         'url',
         'created_at',
     ];

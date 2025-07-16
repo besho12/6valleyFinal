@@ -24,6 +24,11 @@
                         <input type="text" name="points" class="form-control" id="video_points"
                                placeholder="{{translate('enter_video_points')}}" required>
                     </div>
+                    <div class="col-md-6">
+                        <label for="required_view_percentage" class="title-color">{{translate('required_view_percentage')}}</label>
+                        <input type="text" name="required_view_percentage" class="form-control" id="required_view_percentage"
+                               placeholder="{{translate('required_view_percentage')}}" required>
+                    </div>
                     <div class="col-md-12 mt-2">
                         <input type="hidden" id="id" name="id">
                         <label for="video_url" class="title-color">{{ translate('video_url')}}</label>
