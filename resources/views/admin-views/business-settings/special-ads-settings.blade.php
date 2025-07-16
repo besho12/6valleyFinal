@@ -79,6 +79,7 @@
                                 <th>{{translate('video_title')}}</th>
                                 <th>{{translate('video_points')}}</th>
                                 <th>{{translate('video_url')}}</th>
+                                <th>{{translate('required_view_percentage')}}</th>                  
                                 <th>{{translate('description')}}</th>                  
                                 <th class="text-center">{{translate('action')}}</th>                  
                             </tr>
@@ -91,6 +92,7 @@
                                 <td>{{ $order['title'] }}</td>
                                 <td>{{ $order['points'] }}</td>
                                 <td>{{ $order['url'] }}</td>
+                                <td>{{ $order['required_view_percentage'] }}</td>
                                 <td>{{ $order['description'] }}</td>
                                 <td>
                                     <div class="d-flex justify-content-center gap-10">
