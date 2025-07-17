@@ -310,9 +310,9 @@
                                     <dt class="col-5 text-nowrap">
 
                                         @if($order['discount_type'] == 'wallet_points_discount')
-                                        {{translate('wallet_discount')}}
+                                            {{translate('wallet_Discount')}}
                                         @else
-                                            {{translate('coupon_discount')}}
+                                            {{translate('coupon_Discount')}}
                                         @endif
 
                                         <br>

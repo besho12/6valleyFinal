@@ -750,9 +750,9 @@ $orderTotalPriceSummary = \App\Utils\OrderManager::getOrderTotalPriceSummary(ord
                                 <tr>
 
                                     @if($orderTotalPriceSummary['discountType'] == 'wallet_points_discount')
-                                        <td class="text-left font-bold">{{ translate('wallet_discount')}}</td>
+                                        <td class="text-left font-bold">{{ translate('wallet_Discount')}}</td>
                                     @else
-                                        <td class="text-left font-bold">{{ translate('coupon_discount')}}</td>
+                                        <td class="text-left font-bold">{{ translate('coupon_Discount')}}</td>
                                     @endif
 
                                     <td class="text-right">
