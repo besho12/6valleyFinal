@@ -308,7 +308,13 @@
                                         <strong>{{setCurrencySymbol(amount: usdToDefaultCurrency(amount: $orderTotalPriceSummary['subTotal']), currencyCode: getCurrencyCode())}}</strong>
                                     </dd>
                                     <dt class="col-5 text-nowrap">
-                                        {{translate('coupon_discount')}}
+
+                                        @if($order['discount_type'] == 'wallet_points_discount')
+                                        {{translate('wallet_discount')}}
+                                        @else
+                                            {{translate('coupon_discount')}}
+                                        @endif
+
                                         <br>
                                         {{(!in_array($order['coupon_code'], [0, NULL]) ? '('.translate('expense_bearer_').($order['coupon_discount_bearer']=='inhouse' ? 'admin' : ($order['coupon_discount_bearer'] =='seller'? 'vendor' : $order['coupon_discount_bearer'])).')': '' )}}
                                     </dt>
