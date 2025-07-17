@@ -1425,6 +1425,7 @@ class OrderManager
             $deliveryFeeDiscount = $shipping;
         }
 
+        dd($order);
         return [
             'itemPrice' => $itemPrice,
             'itemDiscount' => $itemDiscount,
