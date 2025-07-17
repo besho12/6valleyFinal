@@ -1438,6 +1438,7 @@ class OrderManager
             'totalAmount' => ($total + $shipping - $extraDiscount - $couponDiscount),
             'paidAmount' => $order['paid_amount'],
             'changeAmount' => ($order['paid_amount'] - ($total + $shipping - $extraDiscount - $couponDiscount)),
+            'discountType' => $order['discount_type'],
         ];
     }
 }

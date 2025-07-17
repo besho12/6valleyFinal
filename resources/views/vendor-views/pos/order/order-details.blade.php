@@ -275,7 +275,13 @@
                                     <dd class="col-6 title-color">
                                         <strong>{{setCurrencySymbol(amount: usdToDefaultCurrency(amount:  $orderTotalPriceSummary['subTotal']), currencyCode: getCurrencyCode()) }}</strong>
                                     </dd>
-                                    <dt class="col-sm-5">{{ translate('coupon_discount') }}</dt>
+
+                                    @if($orderTotalPriceSummary['discount_type'] == 'wallet_points_discount')
+                                        <dt class="col-sm-5">{{ translate('walled_discount') }}</dt>
+                                    @else
+                                        <dt class="col-sm-5">{{ translate('coupon_discount') }}</dt>
+                                    @endif
+
                                     <dd class="col-sm-6 title-color">
                                         <strong>- {{setCurrencySymbol(amount: usdToDefaultCurrency(amount:  $orderTotalPriceSummary['couponDiscount']), currencyCode: getCurrencyCode()) }}</strong>
                                     </dd>
