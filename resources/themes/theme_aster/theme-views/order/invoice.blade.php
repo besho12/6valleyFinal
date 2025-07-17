@@ -729,7 +729,11 @@ $orderTotalPriceSummary = \App\Utils\OrderManager::getOrderTotalPriceSummary(ord
                                     </tr>
                                 @endif
                                 <tr>
-                                    <td class="text-left font-bold">{{ translate('coupon_Discount')}}</td>
+                                    @if($orderTotalPriceSummary['discountType'] == 'wallet_points_discount')
+                                        <td class="text-left font-bold">{{ translate('wallet_discount')}}</td>
+                                    @else
+                                        <td class="text-left font-bold">{{ translate('coupon_discount')}}</td>
+                                    @endif
                                     <td class="text-right">
                                         - {{ webCurrencyConverter(amount: $orderTotalPriceSummary['couponDiscount']) }}</td>
                                 </tr>
