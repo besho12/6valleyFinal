@@ -620,7 +620,8 @@ class WebController extends Controller
                     'payment_status' => 'unpaid',
                     'transaction_ref' => '',
                     'order_group_id' => $uniqueID,
-                    'cart_group_id' => $groupId
+                    'cart_group_id' => $groupId,
+                    'wallet_points_discount' => $request['wallet_points_discount'],
                 ];
                 $orderId = OrderManager::generate_order($data);
                 $orderIds[] = $orderId;
@@ -744,6 +745,7 @@ class WebController extends Controller
                 'order_group_id' => $genUniqueId,
                 'cart_group_id' => $cartGroupSingleId,
                 'offline_payment_info' => $offlinePaymentInfo,
+                'wallet_points_discount' => $request['wallet_points_discount'],
             ];
             $getOrderId = OrderManager::generate_order($data);
             $orderIds[] = $getOrderId;
@@ -801,7 +803,8 @@ class WebController extends Controller
                     'payment_status' => 'paid',
                     'transaction_ref' => '',
                     'order_group_id' => $unique_id,
-                    'cart_group_id' => $group_id
+                    'cart_group_id' => $group_id,
+                    'wallet_points_discount' => $request['wallet_points_discount'],
                 ];
                 $order_id = OrderManager::generate_order($data);
                 $order_ids[] = $order_id;

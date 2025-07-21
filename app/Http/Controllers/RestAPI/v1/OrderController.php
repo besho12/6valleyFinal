@@ -149,6 +149,7 @@ class OrderController extends Controller
                 'cart_group_id' => $groupId,
                 'request' => $request,
                 'newCustomerRegister' => $newCustomerRegister,
+                'wallet_points_discount' => $request['wallet_points_discount'],
             ];
 
             $orderId = OrderManager::generate_order($data);
@@ -286,6 +287,7 @@ class OrderController extends Controller
                 'request' => $request,
                 'newCustomerRegister' => $newCustomerRegister,
                 'offline_payment_info' => $offline_payment_info,
+                'wallet_points_discount' => $request['wallet_points_discount'],
             ];
             $order_id = OrderManager::generate_order($data);
 
@@ -377,6 +379,7 @@ class OrderController extends Controller
                     'order_group_id' => $unique_id,
                     'cart_group_id' => $group_id,
                     'request' => $request,
+                    'wallet_points_discount' => $request['wallet_points_discount'],
                 ];
 
                 $order_id = OrderManager::generate_order($data);

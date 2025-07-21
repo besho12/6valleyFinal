@@ -508,7 +508,17 @@ class OrderManager
         $coupon_code = $couponProcess['coupon_code'];
         $coupon_bearer = $couponProcess['coupon_bearer'];
         $discount = $couponProcess['discount'];
-        $discount_type = $couponProcess['discount'] == 0 ? null : 'coupon_discount';
+
+
+
+        $discount_type_text = 'coupon_discount';
+        if($data['wallet_points_discount'] == '1'){
+            $discount_type_text = 'wallet_points_discount';
+        }
+        $discount_type = $couponProcess['discount'] == 0 ? null : $discount_type_text;
+
+
+
         $order_note = $req['order_note'] ?? session('order_note');
 
         $cart_group_id = $data['cart_group_id'];

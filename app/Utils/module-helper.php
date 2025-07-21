@@ -92,6 +92,7 @@ if (!function_exists('digital_payment_success')) {
                     'new_customer_id' => $addCustomer ? $addCustomer['id'] : ($additionalData['new_customer_id'] ?? null),
                     'cart_group_id' => $cartGroupId,
                     'newCustomerRegister' => $addCustomer,
+                    'wallet_points_discount' => $paymentData['wallet_points_discount'],
                 ];
                 $orderId = OrderManager::generate_order($data);
                 unset($data['payment_method']);
