@@ -30,6 +30,7 @@ use App\Models\User;
 use Carbon\Carbon;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Str;
+use App\Models\WalletTransaction;
 
 
 class OrderManager
@@ -685,6 +686,34 @@ class OrderManager
         }
 
         $order = Order::with('customer', 'seller.shop', 'details')->find($order_id);
+
+        $user = User::where('id', $user->id)->first();
+        $currentBalance = $user->wallet_balance;
+
+        $credit = 0.00;
+        $credit_amount = currencyConverter(amount: $credit);
+        $debit_amount = currencyConverter(amount: $discount);
+
+        if($data['wallet_points_discount'] == '1'){
+            $wallet_transaction = new WalletTransaction();
+            $wallet_transaction['user_id'] = $user->id;
+            $wallet_transaction['transaction_id'] = Str::uuid();
+            $wallet_transaction['reference'] = 'order payment';
+            $wallet_transaction['transaction_type'] = 'order_place';
+            $wallet_transaction['payment_method'] =  null;
+            $wallet_transaction['credit'] = 0.00;
+            $wallet_transaction['debit'] = $discount;
+            $wallet_transaction['balance'] = $currentBalance + $credit_amount - $debit_amount;
+            $wallet_transaction['created_at'] = now();
+            $wallet_transaction['updated_at'] = now();
+
+            $user->update([
+                'wallet_balance' => $currentBalance + $credit_amount - $debit_amount,
+            ]);
+            $wallet_transaction->save();
+        }
+
+
         if ($or['payment_method'] != 'cash_on_delivery' && $or['payment_method'] != 'offline_payment') {
             $order_summary = OrderManager::order_summary($order);
             $order_amount = $order_summary['subtotal'] - $order_summary['total_discount_on_product'] - $order['discount'];
